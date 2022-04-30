@@ -1,0 +1,8 @@
+1) Find kth missing Positive number
+   ( https://leetcode.com/problems/kth-missing-positive-number/ )
+   
+   Concept :- index & element relation (cyclic sort & Binary Search)
+
+2) Find the kth largest element from stream
+   (https://leetcode.com/problems/kth-largest-element-in-a-stream/)
+   Concept :- Heap
