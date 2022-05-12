@@ -41,5 +41,3 @@ k = 3
 n = 1
 a = combinationSum3(k, n)
 print(a)
-
-
