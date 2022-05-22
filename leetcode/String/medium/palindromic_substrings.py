@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/palindromic-substrings/
+from itertools import starmap 
+from operator import eq
 
 '''
 QUE
