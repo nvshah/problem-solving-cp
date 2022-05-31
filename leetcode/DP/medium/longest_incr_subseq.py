@@ -2,6 +2,7 @@
 
 from typing import List
 from functools import reduce
+from bisect import bisect_left
 
 
 def lengthOfLIS1(nums: List[int]) -> int:
@@ -20,6 +21,24 @@ def lengthOfLIS1(nums: List[int]) -> int:
                 LIS[i] = max(LIS[i], 1 + LIS[j])
             
     return max(LIS)
+
+'''
+BETTER
+
+Idea :- Binary Search + Insertion Sort Logic
+'''
+def lengthOfLIS(nums: List[int]) -> int:
+    ''' O(n * logn) '''
+    LIS = []  # LIS # holds the longest incr subseq possible at moment
+
+    for n in nums:
+        i = bisect_left(LIS, n)   # find the pos of {n} in pssible longest incr subseq
+        if i == len(LIS):
+            LIS.append(n)
+        else:
+            LIS[i] = n  
+            
+    return len(LIS)
 
 nums = [10,9,2,5,3,7,101,18]
 #nums = [0,1,0,3,2,3]

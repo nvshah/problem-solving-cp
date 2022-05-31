@@ -76,6 +76,11 @@ def get_boundaries(matrix):
 
       return bounds
 
+def addToSet(s, v):
+      if v in s: return False 
+      s.add(v)
+      return True
+
 def isPalindrome(s):
     m = len(s) // 2
     return all(starmap(eq, zip(s[:m], reversed(s))))
