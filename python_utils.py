@@ -1,5 +1,6 @@
 
 import itertools as it
+from operator import eq
 
 # --- Utils
 
@@ -83,7 +84,7 @@ def addToSet(s, v):
 
 def isPalindrome(s):
     m = len(s) // 2
-    return all(starmap(eq, zip(s[:m], reversed(s))))
+    return all(it.starmap(eq, zip(s[:m], reversed(s))))
 
 if __name__ == '__main__':
     a = [1, 3, 2, 4]

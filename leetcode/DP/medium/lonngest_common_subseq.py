@@ -39,10 +39,10 @@ def longestCommonSubsequence2(text1: str, text2: str) -> int:
 
     for i in range(1, l1+1):      # moving from Right -> Left
         for j in range(1, l2+1): 
-            if text1[i-1] == text2[j-1]:  # same
+            if text1[i-1] == text2[j-1]:  # same characters 
                 dp[i][j] = 1 + dp[i-1][j-1]
             else:
-                dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1]) # Look Before
 
     return dp[l1][l2]
 
