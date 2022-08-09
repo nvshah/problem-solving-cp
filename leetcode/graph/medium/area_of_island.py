@@ -5,7 +5,6 @@ from typing import List
 
 
 def maxAreaOfIsland(grid: List[List[int]]) -> int:
-    ''' Incorrect'''
     m, n = len(grid), len(grid[0])
     
     visit = set()

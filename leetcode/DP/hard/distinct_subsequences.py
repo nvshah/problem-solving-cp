@@ -20,5 +20,7 @@ def numDistinct(s: str, t: str) -> int:
             v = dfs(i+1, j+1) + dfs(i+1, j)
             cache[(i,j)] = v
         else: 
-            dfs(i+1, j)      
+            dfs(i+1, j)    
+
+    return dfs(0, 0)  
          
