@@ -1,5 +1,6 @@
 # https://leetcode.com/problems/bag-of-tokens/
 from collections import deque
+from collections import List
 
 def bagOfTokensScore(tokens: List[int], power: int) -> int:
     que = deque(sorted(tokens)) # queue of candidate tokens
