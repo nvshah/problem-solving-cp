@@ -62,6 +62,12 @@ def insert(intervals: List[List[int]], newInterval: List[int]) -> List[List[int]
     print(intervals)
 
 
+def isort_str():
+    l = ['abc', 'mehr', 'pipun', 'prince']
+    bisect.insort(l, 'nipun')
+    print(l)
+
+
 intervals = [[1,3],[6,9]]
 newInterval = [2,5]
 
@@ -69,4 +75,5 @@ intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]]
 newInterval = [4,8]
 #newInterval = [0,8]
 
-insert(intervals, newInterval)
+#insert(intervals, newInterval)
+isort_str()
