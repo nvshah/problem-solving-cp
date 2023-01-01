@@ -86,6 +86,22 @@ def isPalindrome(s):
     m = len(s) // 2
     return all(it.starmap(eq, zip(s[:m], reversed(s))))
 
+def argsort(l, key=None, reverse=False):
+    '''
+        :param l: -> can be any object that cann be indexed (ie list, array, dictionary, tuple)
+        :param mapper: -> applied to each element of original arr {l} to extract new element
+                          if None then original element will be used itself
+                          mapper takes 1 arg & return a val
+                          mapper :- is kinda ValueChanged typedef alike 
+        :param fun: -> fun to be applied on entire mapped list {ml} after mapper is applied to all elem
+        :returns arr: array of indexes where each element-val-idx corresp to element in original array {l}
+
+    '''
+    ml = l 
+    if key:
+        ml = list(map(key, l))
+    return sorted(range(len(l)), key=ml.__getitem__, reverse=reverse)
+
 if __name__ == '__main__':
     a = [1, 3, 2, 4]
     a = [1,8,3,4,5,6,7,2,9,10]
