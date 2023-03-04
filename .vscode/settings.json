@@ -1,8 +1,10 @@
 {
-    "workbench.colorTheme": "One Dark Pro Darker",
-    "editor.fontFamily": "Dank Mono, Operator Mono Lig, Lotion, MonoLisa,  JetBrains Mono, Fira Code iScript, Fira Code, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 14,
+    "workbench.colorTheme": "Material Theme Darker",
+    //"editor.fontFamily": "Dank Mono, Operator Mono Lig, Lotion, MonoLisa,  JetBrains Mono, Fira Code iScript, Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 15,
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": false,
     "python.formatting.provider": "black",
+
+    "editor.semanticHighlighting.enabled": false,
 }
