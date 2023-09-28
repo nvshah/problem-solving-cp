@@ -1,5 +1,6 @@
 from itertools import count
 from collections import defaultdict
+from functools import partial
 
 def values_to_count():
 
@@ -23,5 +24,10 @@ def defaultdict_and_cntr():
     
     print(posAllocater)
     print(m)
+
+def init_default_dict():
+    itemgetter
+    d = defaultdict(list)
+    l = [(1,2), (2,4), (1,8), (3,8), ()]
 
 defaultdict_and_cntr()

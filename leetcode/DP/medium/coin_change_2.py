@@ -1,5 +1,4 @@
 # https://leetcode.com/problems/coin-change-2/
-
 from typing import List
 
 
@@ -28,7 +27,7 @@ def change(amount: int, coins: List[int]) -> int:
         return v
 
 def change_dp(amount: int, coins: List[int]) -> int:
-    ''' Using Recursive Memoization '''
+    ''' Using DP Table | Matrix '''
     rows = len(coins)
     cols = amount
     # 1 ;= for getting amoutn =0 we dont require any coins
