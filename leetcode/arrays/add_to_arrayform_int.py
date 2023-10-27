@@ -1,8 +1,7 @@
 # https: // leetcode.com/problems/add-to-array-form-of-integer/
 
-
 from typing import List
-from math import log10
+from math import log10, floor
 
 
 def addToArrayForm(num: List[int], k: int) -> List[int]:
@@ -11,7 +10,7 @@ def addToArrayForm(num: List[int], k: int) -> List[int]:
 
 def addToArrayForm2(num: List[int], k: int) -> List[int]:
     n1_l = len(num)
-    n2_l = log10(k) + 1
+    n2_l = floor(log10(k)) + 1  # length of k
     new_res = [0] * max(n1_l, n2_l)
 
     carry = 0

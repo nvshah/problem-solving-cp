@@ -1,20 +1,23 @@
-# https://leetcode.com/problems/contains-duplicate-ii/
+# https://leetcode.com/problems/contains-duplicate/
 
-from collections import defaultdict
 from typing import List
+from collections import defaultdict
 
+def containsDuplicate(nums: List[int]) -> bool:
+    return len(set(nums)) != len(nums)
 
-def containsNearbyDuplicate(nums: List[int], k: int) -> bool:
-    idx_map = {}  # map for right most index of number
-        
-    for i, num in enumerate(nums):
-        if num in idx_map:
-            j = idx_map[num]  # latest idx for {num} till now
-            if abs(i-j) <= k: return True
-        
-        idx_map[num] = i  # update latest idx for {num}
-    
+def containsDuplicate1(nums: List[int]) -> bool:
+    s = set()
+    for n in nums:
+        if n in s:
+            return True 
+        s.add(n)
     return False
-                
-                
-            
+
+def containsDuplicate2(nums: List[int]) -> bool:
+    d = defaultdict(int)
+    for n in nums:
+        if d[n]:
+            return True 
+        d[n] += 1
+    return False

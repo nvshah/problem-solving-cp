@@ -71,7 +71,7 @@ def spiralOrder4(matrix: List[List[int]]) -> List[int]:
     l, r = 0, n  # left, right
     t, b = 0, m  # top, bottom
 
-    while l<r and t<b:  # till matrxi is not filled/traveresed, spirally
+    while l<r and t<b:  # till matrix is not filled/traveresed, spirally
 
         # 1. fill TOP row (ie from left -> right)
         for j in range(l, r):

@@ -1,7 +1,32 @@
 # https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
 from typing import List
 
-def findUnsortedSubarray(nums: List[int]) -> int:
+def findUnsortedSubarray1(nums: List[int]) -> int:
+    # Find smallest & biggest among all out of order nums
+    minOutOfOrder = float('inf') 
+    maxOutOfOrder = float('-inf')
+
+    for i in range(len(nums)-1):
+        if nums[i] > nums[i+1]: # AMiss 
+            # ! Out of order found in a Pair always !!
+            maxOutOfOrder = max(maxOutOfOrder, nums[i])
+            minOutOfOrder = min(minOutOfOrder, nums[i+1])
+    
+    if minOutOfOrder == float('inf'):
+        return 0 # no out of order nums in nums
+    
+    # Find correct boundaries of subarr for Out-Of-Order nums 
+    leftPos, rightPos = 0, len(nums)-1 
+
+    while minOutOfOrder >= nums[leftPos]:  # In Left Part
+        leftPos += 1
+    
+    while maxOutOfOrder <= nums[rightPos]: # In Right Part
+        rightPos -= 1
+    
+    return rightPos - leftPos + 1 
+
+def findUnsortedSubarray2(nums: List[int]) -> int:
     n = len(nums)
     # 1. Find the First Incorrect Loc from Left Side
     l = 0
@@ -39,3 +64,9 @@ def findUnsortedSubarray(nums: List[int]) -> int:
             break
     
     return end-begin+1
+
+
+# --- TEST 
+
+nums = [1,3,5,4,2]
+ans = findUnsortedSubarray1(nums) 
