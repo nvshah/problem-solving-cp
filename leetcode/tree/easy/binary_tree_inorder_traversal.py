@@ -29,6 +29,22 @@ def inorderTraversal2(root: Optional[TreeNode]) -> List[int]:
     stack = []   # stack to keep track of node at upper levels
 
     while curr or stack:  # till any node exists
+        if curr: # left node is there
+            res.append(curr.val)
+            stack.append(curr.right)
+            curr = curr.left
+        else:
+            curr = stack.pop()  # no more left
+
+    return res
+
+def inorderTraversal3(root: Optional[TreeNode]) -> List[int]:
+    '''Stack + Iterative Manner'''
+    res = []
+    curr = root  # pointer to current node
+    stack = []   # stack to keep track of node at upper levels
+
+    while curr or stack:  # till any node exists
         # 1. Explore the Depth First Left Most
         while curr:
             stack.append(curr)

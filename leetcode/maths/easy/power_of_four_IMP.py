@@ -1,5 +1,8 @@
 # https://leetcode.com/problems/power-of-four/
 
+from math import log
+
+
 def isPowerOfFour(n: int) -> bool:
     if n == 1: return True
     if n < 4: return False

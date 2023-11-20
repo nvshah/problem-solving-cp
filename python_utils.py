@@ -102,6 +102,26 @@ def argsort(l, key=None, reverse=False):
         ml = list(map(key, l))
     return sorted(range(len(l)), key=ml.__getitem__, reverse=reverse)
 
+def findAllSums(nums):
+    res = {0, sum(nums)}
+
+    for i in range(1, len(nums)):
+        res.update({sum(sub) for sub in it.combinations(nums, i)})
+    
+    return res 
+
+def findAllSums2(nums):
+    n = len(nums)
+    res = {}
+    def explore(i, total):
+        if i == n: 
+            res.add(total)
+            return 
+
+        explore(i+1, total+nums[i])
+        explore(i+1, total)
+    return res
+
 if __name__ == '__main__':
     a = [1, 3, 2, 4]
     a = [1,8,3,4,5,6,7,2,9,10]

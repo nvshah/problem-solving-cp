@@ -46,6 +46,35 @@ class Solution:
         
         # Now the Accounts info is clubbed
 
+        emailGroup = defaultdict(list) # account's idx -> [emails]
+        for e, i in emailToAcc.items():
+            leader = uf.find(i)
+            emailGroup[leader].append(e)
+
+        res = []
+        for i, emails in emailGroup.items():
+            name = accounts[i][0]
+            res.append([name, *sorted(emails)])
+
+        return res
+
+class Solution2:
+    def accountsMerge(self, accounts:  List[List[str]]) -> List[List[str]]:
+        emailToAcc = {}  # email -> account_idx
+        uf = UnionFind(len(accounts))
+
+        for idx, account in enumerate(accounts):
+            for email in account[1:]:
+                if email in emailToAcc:
+                    # Already account registered in some group
+                    rootGrpId = emailToAcc[email]
+                    uf.union(rootGrpId, idx)   # club current account to registered group
+                else:
+                    # Account not registered yet
+                    emailToAcc[email] = idx
+        
+        # Now the Accounts info is clubbed
+
         # counter mechanism to find the pos of unique grp in result list
         cntr = count()
         grpToPos = defaultdict(cntr.__next__)
@@ -65,7 +94,7 @@ class Solution:
         return merged
 
 
-class Solution2:
+class Solution3:
     
     '''NOT WORKING'''
 
