@@ -27,5 +27,50 @@ def restoreIpAddresses(s: str) -> List[str]:
     backtrack(0, 0, '')
     return res 
 
+
+def restoreIpAddresses2(s: str) -> List[str]:
+    N = len(s) 
+
+    res = [] # possible ip-addresses
+    cur = [] # cur dot position (permutation)
+
+    def helper(i, k):
+        '''place [k] dots in string[i:]'''
+        cur_str_len = N - i 
+
+        if cur_str_len < k+1: return # not enough places for [k] dots in cur-substr
+
+        if k == 0: # all dots are placed
+            if isValidPart(s, i, N):
+                res.append(constructIpAddress(s, cur))
+            return 
+        
+        start = i+1
+        end = min(start+3, N)
+        
+        for j in range(start, end):
+            if not isValidPart(s, i, j): break 
+            cur.append(j) 
+            helper(j, k-1)
+            cur.pop() 
+    
+    helper(0, 3)
+    return res 
+
+def isValidPart(string, s, e):
+    part = string[s: e]
+    noLeadingZero = len(part) == 1 or part[0] != '0' 
+    isValidValue = 0 <= int(part) <= 255
+
+    return noLeadingZero and isValidValue
+ 
+def constructIpAddress(string, dotsPos):
+    charArr = list(string)
+    for i in reversed(dotsPos):
+        charArr.insert(i, '.')
+    return ''.join(charArr)
+
 s = "25525511135"
-restoreIpAddresses(s)
+s = "0000"
+ans = restoreIpAddresses2(s)
+print(ans)

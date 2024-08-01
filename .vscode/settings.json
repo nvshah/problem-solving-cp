@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Visual Studio 2019 Light",
+    // "workbench.colorTheme": "GitHub Light Colorblind (Beta)",
     //"editor.fontFamily": "Dank Mono, Operator Mono Lig, Lotion, MonoLisa,  JetBrains Mono, Fira Code iScript, Fira Code, Menlo, Monaco, 'Courier New', monospace",
  
     "python.linting.pylintEnabled": true,
