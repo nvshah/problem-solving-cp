@@ -2,9 +2,9 @@
     // "workbench.colorTheme": "GitHub Light Colorblind (Beta)",
     //"editor.fontFamily": "Dank Mono, Operator Mono Lig, Lotion, MonoLisa,  JetBrains Mono, Fira Code iScript, Fira Code, Menlo, Monaco, 'Courier New', monospace",
  
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": false,
-    "python.formatting.provider": "black",
+    // "python.linting.pylintEnabled": true,
+    // "python.linting.enabled": false,
+    // "python.formatting.provider": "black",
     //"editor.fontFamily": "Operator Mono Book Italic, Fira Code, Consolas, 'Courier New', monospace",
     "editor.fontFamily": "Operator Mono, MonoLisa Regular, Consolas, 'Courier New', monospace",
     "editor.fontSize": 16,
