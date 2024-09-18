@@ -8,7 +8,13 @@
     //"editor.fontFamily": "Operator Mono Book Italic, Fira Code, Consolas, 'Courier New', monospace",
     "editor.fontFamily": "Operator Mono, MonoLisa Regular, Consolas, 'Courier New', monospace",
     "editor.fontSize": 16,
-    "editor.semanticHighlighting.enabled": true,
+    "editor.semanticHighlighting.enabled": false,
     "editor.fontLigatures": true,
     "editor.acceptSuggestionOnEnter": "on",
+    "[python]": {
+        "editor.codeActionsOnSave": {
+        "source.organizeImports.ruff": "explicit"
+        }, 
+        "editor.formatOnSave": true
+    }
 }
