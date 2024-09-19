@@ -12,10 +12,45 @@ step 2) Reverse Each Row
 step 3) Transpose of resulted matrix
 }
 
+Logic2: (similar but more concise)
+Repeat till matrix exists
+{
+S 1) Get First Row
+S 2) Rotate Matrix by 90 deg left side (ie Antic-Clockwise)
+     2.1 Rotate (Transpose)
+     2.2 Reverse 
+}
+
 """
 
 
 def spiralOrder(matrix: List[List[int]]) -> List[int]:
+    """
+    traverse matrix in spiral order clock-wise
+    """
+    spiral_traverse = []
+
+    def rotate_left(m):
+        """
+        In-Place
+        [1, 2]
+        [3, 4]
+
+        [2, 4]
+        [1, 3]
+        """
+        (*m,) = zip(m)  # transpose
+        m.reverse()  # = 90 degree (left) rotation
+
+    while matrix:
+        first_row = matrix.pop(0)
+        spiral_traverse.extend(first_row)
+        rotate_left(matrix)
+
+    return spiral_traverse
+
+
+def spiralOrder2(matrix: List[List[int]]) -> List[int]:
     """
     traverse matrix in spiral order clock-wise
     """
@@ -34,23 +69,8 @@ def reverseSpiralOrder(matrix: List[List[int]]) -> List[int]:
              2) Do a Spiral Order Traverse
     """
     (*matrix,) = zip(*matrix)
-    anti_spiral_traverse = spiralOrder(matrix)
+    anti_spiral_traverse = spiralOrder2(matrix)
     return anti_spiral_traverse
-
-
-def test_reverse():
-    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-
-    matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
-    matrix = [[1, 10], [2, 11], [3, 12]]
-    #   ans1 = spiralOrder(matrix)
-    ans2 = reverseSpiralOrder(matrix)
-
-    # print(ans1)
-    print(ans2)
-
-
-test_reverse()
 
 
 def spiralOrder3(matrix: List[List[int]]) -> List[int]:
@@ -106,3 +126,24 @@ def spiralOrder4(matrix: List[List[int]]) -> List[int]:
         l += 1  # update left boundary
 
     return res
+
+
+def test_reverse():
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+    matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
+    matrix = [[1, 10], [2, 11], [3, 12]]
+    #   ans1 = spiralOrder(matrix)
+    ans2 = reverseSpiralOrder(matrix)
+
+    # print(ans1)
+    print(ans2)
+
+
+def test():
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    ans = spiralOrder(matrix)
+    print(ans)
+
+
+test()
