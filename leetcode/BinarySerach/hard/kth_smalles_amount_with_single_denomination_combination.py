@@ -10,12 +10,23 @@ We will apply binary search not on position based but on value based
 At each step try to find the value & proceed ahead
 """
 
+"""
+IDea
+1. Try to simulate with 1 kit or sequence 
+"""
+
 
 def find_lcm(a, b):
+    """calculte lcm between 2 numbers
+    LCM(a, b) = a * b  / GCD(a, b)
+    """
     return abs(a * b) // gcd(a, b)
 
 
 def calc_lcm(*nums):
+    """Find lcm between [nums]
+    NOTE:- (ie more than 2 numbers)
+    """
     return reduce(find_lcm, nums)
 
 

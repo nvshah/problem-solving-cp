@@ -1,0 +1,14 @@
+* Partition Step | Quick Sort
+  ----
+  Can be achieved in 2 ways
+
+  1) start left & righ pointer from start
+     |
+     left will point to next possile lower value than pivot
+     right will iterate entire array
+
+  2) both ends
+     |
+     left and right both will progress till they found candidate for each other to swap
+     once they found they will swap and
+     Repeat same process again

@@ -7,14 +7,20 @@
     // "python.formatting.provider": "black",
     //"editor.fontFamily": "Operator Mono Book Italic, Fira Code, Consolas, 'Courier New', monospace",
     "editor.fontFamily": "Operator Mono, MonoLisa Regular, Consolas, 'Courier New', monospace",
-    "editor.fontSize": 16,
+    "editor.fontSize": 15,
     "editor.semanticHighlighting.enabled": false,
     "editor.fontLigatures": true,
+    "workbench.colorTheme": "Tokyo Storm AltSynt",
     "editor.acceptSuggestionOnEnter": "on",
+    "csharp.semanticHighlighting.enabled": true,
     "[python]": {
         "editor.codeActionsOnSave": {
-        "source.organizeImports.ruff": "explicit"
+            "source.organizeImports.ruff": "explicit"
         }, 
-        "editor.formatOnSave": true
-    }
+        "editor.formatOnSave": true, 
+        "editor.defaultFormatter": "ms-python.black-formatter"
+        // "editor.defaultFormatter": "charliermarsh.ruff", 
+        // e
+    }, 
+    //"editor.defaultFormatter": null,
 }

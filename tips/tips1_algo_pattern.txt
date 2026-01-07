@@ -1,0 +1,48 @@
+leetcode solving tips
+
+[Pirate King]
+https://youtu.be/p_9t8uhXQdk?si=uwhj61hGaekKop0f
+https://www.piratekingdom.com/leetcode/cheat-sheet
+
+1. Leftmost Binary Search
+   - Targets first occurence
+   - Index where target should exists if its not present
+
+  - First pos of element = leftmostbs(elem)
+  - Last pos of element = leftmostbs(elem+1)-1
+
+2. Deque  (All in one DS)
+   - Linked List
+   - Queue
+   - Stack
+
+3. HeapQ
+   - Priority Queue (Min Heap)
+
+4. String Concatenation
+   - "".join([strings])
+     or
+     StringBuilder in java
+
+5. To find kth largest
+   - Use Quick Select Algo
+   - Instead of HeapQ
+
+6. BST & Inorder Traversal
+
+7. Helper Pointer & Linked List
+   dummy
+
+8. Quick Select
+   - Find kth smallest & kth largest in unordered list
+   -> Works similarly the way how Quick Sort works
+      but unlike instead of processing both left & right part, quick-select needs to deal with only one
+      i.e instead of solving 2 halves it just focus on 1 halve in each pass
+      (ie reducing domain logarithmically or exponetially in multiple of 2 each time)
+
+   Q. How is this better than O(n log k)
+   ->
+
+   Alternatives
+   ----
+   -> Heap (ie

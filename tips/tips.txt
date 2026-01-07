@@ -1,0 +1,7 @@
+Whenever you want to try all possible combinations
+- Subset
+- Bit Masking // Is the one should strike in your mind
+
+You can use format() to get the binary version of your number i.e format(num, 'b')
+
+Use help(obj) or dir(obj) to get signature or methods available with that object obj

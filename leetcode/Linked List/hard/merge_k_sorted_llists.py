@@ -14,7 +14,7 @@ def segregate_to_groups(lst, grpSize=2, fillVal = None):
           => ans := [(1,2), (3,4), (5, None)] 
     '''
     lst_iter = iter(lst)
-    return it.zip_longest(*it.repeat(lst_iter, grpSize), fillvalue=fillVal)
+    return it.zip_longest(*it.repeat(lst_iter, grpSize), fillvalue=fillVal,)
 
 def merge_two_lists(l1, l2):
     # creating a dummy node to handle edge case of inserting into a empty lists
