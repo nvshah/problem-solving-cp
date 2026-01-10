@@ -1,0 +1,8 @@
+https://algo.monster/templates
+https://www.piratekingdom.com/leetcode/cheat-sheet
+
+https://www.piratekingdom.com/leetcode/study-guide
+https://leetcode.com/discuss/post/2546082/leetcodes-pick-topic-wisewith-question-l-uv7f/
+
+https://github.com/ashishps1/awesome-leetcode-resources
+https://github.com/KushalVijay/DSA-Patterns-Roadmap
